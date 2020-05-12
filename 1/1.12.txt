@@ -1,0 +1,91 @@
+#1 (1.12.1)
+a = int(input())
+b = int(input())
+c = int(input())
+p = (a+b+c)/2
+S = (p*(p-a)*(p-b)*(p-c))**(1/2)
+print(S)
+
+#2 (1.12.2)
+N = int(input())
+if (N > -15 and N <= 12) or (N > 14 and N < 17) or N >= 19:
+	print(True)
+else:
+	print(False)
+
+#3 (1.12.3)
+a = float(input())
+b = float(input())
+ev = input().lower()
+if ev == "+":
+	print(a+b)
+elif ev == "-":
+	print(a-b)
+elif ev == "*":
+	print(a*b)
+elif ev in ["/", "mod", "div"]:
+	if b == 0:
+		print("Деление на 0!")
+	else:
+		if ev == "/":
+			print(a/b)
+		elif ev == "mod":
+			print(a%b)
+		else:
+			print(a//b)
+elif ev == "pow":
+	print(a**b)
+
+#4 (1.12.4)
+type = input().lower()
+if type == "треугольник":
+	a = int(input())
+	b = int(input())
+	c = int(input())
+	p = (a+b+c)/2
+	S = (p*(p-a)*(p-b)*(p-c))**(1/2)
+elif type == "прямоугольник":
+	a = int(input())
+	b = int(input())
+	S = a*b
+elif type == "круг":
+	r = int(input())
+	S = 3.14*r**2
+print(S)
+
+#5 (1.12.5)
+a = int(input())
+b = int(input())
+c = int(input())
+l = [a, b, c]
+l.sort()
+max = l[2]
+min = l[0]
+last = l[1]
+print(f"{max}\n{min}\n{last}")
+
+#6 (1.12.6)
+n = str(int(input()))
+if (n[-1] in "1234"):
+	if len(n) > 1:
+		if n[-2] == "1":
+			end = "ов"
+		elif n[-1] == "1":
+		 end = ""
+		else:
+			end = "а"
+	else:
+		if n[-1] == "1":
+			end = ""
+		else:
+			end = "а"
+elif (n[-1] in "056789"):
+	end = "ов"
+print(n, "программист"+end)
+
+#7 (1.12.7)
+n = input()
+if int(n[0])+int(n[1])+int(n[2]) == int(n[3])+int(n[4])+int(n[5]):
+	print("Счастливый")
+else:
+	print("Обычный")

@@ -1,0 +1,36 @@
+#1 (2.5.3)
+8
+
+#2 (2.5.7)
+1 2 3; 1 10 3; 20 10 3; 20 10 3
+
+#3 (2.5.9)
+I 
+print(eval(input().replace(' ', '+')))
+
+II
+print(sum(input().split()))
+
+#4 (2.5.10)
+a = [int(i) for i in input().split()]
+b = []
+if len(a) > 1:
+	for i in range(len(a)):
+		if i == 0:
+			b.append(a[-1]+a[1])
+		elif i == len(a)-1:
+			b.append(a[-2]+a[0])
+		else:
+			b.append(a[i-1]+a[i+1])
+	for i in b:
+		print(i, end=' ')
+else:
+	print(a[0])
+
+#5 (2.5.11)
+a = input().split()
+b = set(a)
+for i in b:
+	a.remove(i)
+for i in set(a):
+	print(i, end=' ')

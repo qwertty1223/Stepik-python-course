@@ -1,0 +1,82 @@
+#1 (3.7.1)
+n = int(input())
+games = []
+for i in range(n):
+	game = input().split(';')
+	games.append([[game[0], int(game[1])], [game[2], int(game[3])]])
+commands = {}
+for game in games:
+	for command in game:
+		if command[0] not in commands.keys():
+			commands.update({command[0]:{'games':0,'wins':0,'draws':0,'loses':0, 'sum':0}})
+	if game[0][1] > game[1][1]:
+		commands[game[0][0]]['wins'] += 1
+		commands[game[1][0]]['loses'] += 1
+	elif game[0][1] < game[1][1]:
+		commands[game[0][0]]['loses'] += 1
+		commands[game[1][0]]['wins'] += 1
+	elif game[0][1] == game[1][1]:
+		commands[game[0][0]]['draws'] += 1
+		commands[game[1][0]]['draws'] += 1
+	commands[game[0][0]]['games'] += 1
+	commands[game[1][0]]['games'] += 1
+for command in commands:
+	commands[command]['sum'] += 3*commands[command]['wins']
+	commands[command]['sum'] += 1*commands[command]['draws']
+for command in commands:
+	games = commands[command]['games']
+	wins = commands[command]['wins']
+	draws = commands[command]['draws']
+	loses =  commands[command]['loses']
+	summ = commands[command]['sum']
+	print(command+':'+str(games), wins, draws, loses, summ)
+
+#2 (3.7.2)
+keys = list(input())
+values = list(input())
+solve = {}
+for i in range(len(keys)):
+	solve.update({keys[i]:values[i]})
+encode = input()
+decode = input()
+string = ""
+for e in encode:
+	string += solve[e]
+string += '\n'
+for e in decode:
+	string += {v:k for k, v in solve.items()}[e]
+print(string)
+
+#3 (3.7.3)
+d = int(input())
+words = set()
+for i in range(d):
+	words.add(input().lower().strip('\n'))
+l = int(input())
+errs = set()
+for i in range(l):
+	inp = input().lower().strip('\n').split()
+	for w in inp:
+		if w not in words:
+			errs.add(w)
+print("\n".join(errs))
+
+#4 (3.7.4)
+end = [0, 0]
+n = int(input())
+for i in range(n):
+	go = input().lower().split()
+	pos = go[0]
+	pt = abs(int(go[1]))
+	if pos == "север":
+		end[1] += pt
+	elif pos == "юг":
+		end[1] -= pt
+	elif pos == "запад":
+		end[0] -= pt
+	elif pos == "восток":
+		end[0] += pt
+print(*end)
+
+#5 (3.7.5)
+файл 3.7.5.py

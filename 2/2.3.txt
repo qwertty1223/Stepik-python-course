@@ -1,0 +1,30 @@
+#1 (2.3.3)
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+f = [[i*e for e in range(c, d+1)] for i in range (a, b+1)]
+s = "\t"
+for i in range(c, d+1):
+	s += "%s\t" % i
+s += "\n"
+for i in range(a, b+1):
+	s += "%s\t" % i
+	for e in range(len(f[i-a])):
+		s += "%s\t" % f[i-a][e]
+	s += "\n"
+print(s)
+
+#2 (2.3.7)
+a = int(input())
+b = int(input())
+list = []
+for i in range(a, b+1):
+	if i % 3 == 0:
+		list.append(i)
+
+sum = 0
+for i in list:
+	sum += i
+avg = sum / len(list)
+print(avg)

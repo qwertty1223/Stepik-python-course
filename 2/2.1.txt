@@ -1,0 +1,32 @@
+#1 (2.1.4)
+13
+
+#2 (2.1.5)
+9
+
+#3 (2.1.9)
+17
+
+#4 (2.1.11)
+a = []
+while True:
+	i = int(input())
+	if i == 0: break
+	else:
+		a.append(i)
+print(sum(a))
+
+#5 (2.2.12)
+a = int(input())
+b = int(input())
+if a == b:
+	d = a
+else:
+	m = a * b
+	while a != 0 and b != 0:
+		if a > b:
+			a %= b
+		else:
+			b %= a
+	d = m // (a + b)
+print(d)

@@ -1,0 +1,23 @@
+#1 (2.4.3)
+gen = input().lower()
+c = gen.count("g") + gen.count("c")
+print(c/len(gen)*100)
+
+#2 (2.4.5)
+def abcdef defghijk kjihgfedcba ijk abcde kigec
+
+#3 (2.4.7)
+a = input()
+o = ""
+c = 0
+i = 0
+for i in range(1, len(a)):
+	if a[i] == a[i-1]:
+		c += 1
+	else:
+		c += 1
+		o += a[i-1] + str(c)
+		c = 0
+c += 1
+o += a[i] + str(c)
+print(o)

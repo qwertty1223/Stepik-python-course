@@ -1,0 +1,17 @@
+#1 (1.10.5)
+A = int(input())
+B = int(input())
+H = int(input())
+if H < A:
+	print("Недосып")
+elif H <= B:
+	print("Это нормально")
+elif H > B:
+	print("Пересып")
+
+#2 (1.10.6)
+YEAR = int(input())
+if (YEAR % 4 == 0 and YEAR % 100 != 0) or YEAR % 400 == 0:
+	print("Високосный")
+else:
+	print("Обычный")
